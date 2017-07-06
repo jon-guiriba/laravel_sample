@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('auth/login');
 })->name('login');
+
+Route::get('/forget_password', function () {
+	return view('auth/login');
+})->name('password.request');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
