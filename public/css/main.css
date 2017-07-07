@@ -16,8 +16,19 @@
     margin-right: 45px;
 }
 
+.margin-bottom-0{
+	margin-bottom: 0px;
+}
+
 .btn-danger{
     color: #fff;
     background-color: #d9534f;
     border-color: #d43f3a;
+}
+
+
+/*carousel*/
+.carousel-control {
+  padding-top:10%;
+  width:5%;
 }
