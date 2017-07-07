@@ -38,6 +38,7 @@
                             </div>
                         </div>
                     </form>
+                    <a class="pull-right btn btn-danger btn-sm margin-right-25" href="{{ route('welcome') }}">Cancel</a> 
                 </div>
             </div>
         </div>

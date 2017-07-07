@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container margin-top-100">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -68,6 +68,7 @@
                             </div>
                         </div>
                     </form>
+                    <a class="margin-right-25 btn btn-danger btn-sm pull-right" href="{{ route('welcome') }}">Cancel</a>
                 </div>
             </div>
         </div>
