@@ -1,7 +1,15 @@
 /*margin*/
 
+.margin-left-50p{
+  margin-left: 50%;
+}
+
 .margin-left-190{
     margin-left: 190px; 
+}
+
+.margin-top-40{
+  margin-top: 40px;
 }
 
 .margin-top-100{
@@ -26,9 +34,22 @@
     border-color: #d43f3a;
 }
 
+.height-250{
+  height: 250px;
+}
+
 
 /*carousel*/
 .carousel-control {
   padding-top:10%;
   width:5%;
+}
+
+.carousel-control.left, .carousel-control.right{
+  /*background-image: none !important;*/
+}
+
+#candid-carousel .item>img{
+  height: 350px; 
+  margin: auto;
 }

@@ -16,4 +16,6 @@ Route::get('/', function () {
     return view('auth/login');
 })->name('welcome');
 
+Route::post('/addCandidate', 'CandidateController@add')->name('addCandidate');
+
 Route::get('/home', 'HomeController@index')->name('home');

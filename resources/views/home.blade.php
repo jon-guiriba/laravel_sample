@@ -1,65 +1,58 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="col-md-12">
-         <h1>Bootstrap 3 Thumbnail Slider</h1>
-
-        <div class="well">
-            <div id="myCarousel" class="carousel slide">
-                
-                <!-- Carousel items -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="row">
-                            <div class="col-sm-3"><a href="#x"><img src="http://placehold.it/500x500" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-3"><a href="#x"><img src="http://placehold.it/500x500" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-3"><a href="#x"><img src="http://placehold.it/500x500" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-3"><a href="#x"><img src="http://placehold.it/500x500" alt="Image" class="img-responsive"></a>
-                            </div>
-                        </div>
-                        <!--/row-->
-                    </div>
-                    <!--/item-->
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
-                            </div>
-                        </div>
-                        <!--/row-->
-                    </div>
-                    <!--/item-->
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
-                            </div>
-                        </div>
-                        <!--/row-->
-                    </div>
-                    <!--/item-->
-                </div>
-                <!--/carousel-inner--> <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+<div class="fluid-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row margin-top-25" style="height: 100px;">
+                 <h1 class="text-center">Most Influencial People 2018</h1>
             </div>
-            <!--/myCarousel-->
+            
+            <div id="candid-carousel" class="carousel slide col-md-8 col-md-offset-2" data-ride="carousel">
+              <!-- Indicators -->
+
+              <div class="carousel-inner" role="listbox">
+                @if ($candidates)
+                  @foreach($candidates as $candidate)
+                    @if ($loop->first)
+                      <div class="item active">
+                        <img class="first-slide" src="data:{{$candidate->mimeType}};charset=utf-8;base64,{{$candidate->image}}">
+                      </div>
+                    @else
+                      <div class="item">
+                        <img class="first-slide" src="data:{{$candidate->mimeType}};charset=utf-8;base64,{{$candidate->image}}">
+                      </div>
+                    @endif
+
+                  @endforeach
+                @endif
+              </div>
+              <a class="left carousel-control" href="#candid-carousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#candid-carousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div><!-- /.carousel -->
         </div>
-        <!--/well-->
+    </div>
+    <div class="row">
+        <span></span>
+    </div>
+    <div class="row">
+      <form action="{{ route('addCandidate') }}" enctype="multipart/form-data" method="POST">
+        {{ csrf_field() }}
+        <div class="row">
+          <div class="col-md-12">
+            <input type="file" name="image" />
+          </div>
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-success">Upload</button>
+          </div>
+        </div>
+      </form>
     </div>
 </div>
 @endsection
