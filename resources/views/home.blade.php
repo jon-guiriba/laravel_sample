@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid curtain-bg">
         <div class="row margin-top-25" style="height: 100px;">
           <div class="col-md-12">
-            <h1 class="text-center">Most Influencial People 2018</h1>
+            <h1 class="text-center white">Most Influencial People 2018</h1>
           </div>
         </div>
             
-        <div class="row" >
-          <div class="col-md-12" >
-            <div id="candid-carousel" class="carousel slide col-md-8 col-md-offset-2" data-ride="carousel" style="height:600px;">
+        <div class="row text-center" >
+          <div class="col-md-6 col-centered margin-left-320">
+            <div id="candid-carousel" class="carousel slide col-md-8" data-ride="carousel" style="height:600px; width:600px;">
 
               <div class="carousel-inner" role="listbox">
                   @if ($candidates)
@@ -19,16 +19,16 @@
                         <div class="item active">
                           <img class="first-slide" src="data:{{$candidate->mimeType}};charset=utf-8;base64,{{$candidate->image}}">
                             <div class="text-center">
-                              <span class="center-block">{{$candidate->name}}</span>
-                              <span class="center-block">{{$candidate->description}}</span>
+                              <span class="center-block fs-35 white">{{$candidate->name}}</span>
+                              <span class="center-block wordwrap fs-25 white" style="width:500px;">{{$candidate->description}}</span>
                             </div>
                         </div>
                       @else
                         <div class="item">
                           <img class="first-slide" src="data:{{$candidate->mimeType}};charset=utf-8;base64,{{$candidate->image}}">
                             <div class="text-center">
-                              <span class="center-block">{{$candidate->name}}</span>
-                              <span class="center-block">{{$candidate->description}}</span>
+                              <span class="center-block fs-35 white">{{$candidate->name}}</span>
+                              <span class="center-block wordwrap fs-25 white" style="width:500px;">{{$candidate->description}}</span>
                             </div>
                         </div>
                       @endif
