@@ -28,6 +28,8 @@ class CandidateController extends Controller
     {
         $this->validate($request, [
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'name' => 'required|max:40',
+            'description' => 'required|max:180'
         ]);
 
         $image = Input::file('image');

@@ -14,10 +14,15 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    
+    <link href="{{ asset('fullcalendar-3.4.0/fullcalendar.css')}}" rel="stylesheet"/>
+    <link href="{{ asset('lightbox2-master/src/css/lightbox.css'}" rel="stylesheet">
+
     <!--Scripts-->
-    <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
-    <!-- <script src="{{asset('js/customcarousel.js')}}"></script> -->
+    <script src='{{asset(fullcalendar-3.4.0/lib/jquery.min.js}}'></script>
+    <script src='{{asset(fullcalendar-3.4.0/lib/moment.min.js}}'></script>
+    <script src='{{asset(fullcalendar-3.4.0/fullcalendar/fullcalendar.js}}'></script>
+    <script src='{{asset(lightbox2-master/src/js/lightbox.js}}'></script>
+    <script src='{{asset(js/bootstrap.min.js}}'></script>
 
 
 </head>
