@@ -7,16 +7,16 @@ $(document).ready(function() {
             events: [ // put the array in the `events` property
                 {
                     title  : 'event1',
-                    start  : '2010-01-01'
+                    start  : '2017-07-08'
                 },
                 {
                     title  : 'event2',
-                    start  : '2010-01-05',
-                    end    : '2010-01-07'
+                    start  : '2017-07-10',
+                    end    : '2017-07-12'
                 },
                 {
                     title  : 'event3',
-                    start  : '2010-01-09T12:30:00',
+                    start  : '2017-07-18',
                 }
             ],
             color: 'black',     // an option!
@@ -43,6 +43,9 @@ $(document).ready(function() {
         	$(this).css('background-color', 'red');
     	},
     	eventClick: function(calEvent, jsEvent, view) {
+
+            $(this).append('<a href="http://localhost/laravel/public/img/influential-3.jpg" data-lightbox="test">Image #2</a>');
+
 	        console.log('Event: ' + calEvent.title);
 	        console.log('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
 	        console.log('View: ' + view.name);
