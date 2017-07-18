@@ -19,3 +19,7 @@ Route::get('/', function () {
 Route::post('/addCandidate', 'CandidateController@add')->name('addCandidate');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/calendar', function () {
+    return view('calendar');
+})->name('calendar');
