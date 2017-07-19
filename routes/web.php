@@ -12,14 +12,7 @@
 */
 Auth::routes();
 
-Route::get('/', function () {
-    return view('auth/login');
-})->name('welcome');
 
-Route::get('/calendar', function () {
+Route::get('/', function () {
     return view('calendar');
 })->name('calendar');
-
-Route::post('/addCandidate', 'CandidateController@add')->name('addCandidate');
-
-Route::get('/home', 'HomeController@index')->name('home');
