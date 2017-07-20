@@ -1,12 +1,33 @@
 $(document).ready(function() {
+
+$( "#addEventModal" ).dialog({
+      autoOpen: false,
+      height: 400,
+      width: 350,
+      modal: true,
+      show: 'fade', 
+      hide: 'fade',
+      close: function() {
+        form[ 0 ].reset();
+        allFields.removeClass( "ui-state-error" );
+      },
+    });
+ 
+    form = $( "#addEventModal" ).find( "form" ).on( "submit", function( event ) {
+      event.preventDefault();
+    });
+ 
+
+
 	$('#calendar').fullCalendar({
 		height: 'parent',
 	    navLinks: true,
 		customButtons: {
 	        addEvent: {
 	            text: '+',
+                theme: false,
 	            click: function() {
-	                alert('clicked the custom button!');
+	                $( "#addEventModal" ).dialog( "open" );
 	            }
 	        },
     	},
@@ -40,19 +61,6 @@ $(document).ready(function() {
             textColor: 'white' 
         }
 	    ],
-	    eventMouseover: function(calEvent, jsEvent, view) {
-            $(this).append(calEvent.description);
-
-	        console.log('Event: ' + calEvent.title);
-	        console.log('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-	        console.log('View: ' + view.name);
-
-	        // change the border color just for fun
-	        $(this).css('border-color', 'red');
-    	},
-        eventMouseout: function(calEvent, jsEvent, view) {
-            $('.calendar-desc').remove();
-        },
 
     });    
 });

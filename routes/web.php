@@ -13,5 +13,10 @@
 Auth::routes();
 
 Route::get('/', function () {
-    return view('calendar');
-})->name('calendar');
+    return view('auth/login');
+})->name('welcome');
+
+
+Route::post('/addCandidate', 'CandidateController@add')->name('addCandidate');
+
+Route::get('/home', 'HomeController@index')->name('home');

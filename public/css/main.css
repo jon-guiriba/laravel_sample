@@ -16,6 +16,10 @@
   height: 100vh;
 }
 
+.hidden{
+  display: none;
+}
+
 /*margin*/
 .margin-left-40{
   margin-left: 40px;

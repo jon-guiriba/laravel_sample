@@ -13,20 +13,21 @@
     <!--Import styles -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('fullcalendar-3.4.0/fullcalendar.css')}}" rel="stylesheet">
-    <link href="{{ asset('lightbox2-master/src/css/lightbox.css')}}" rel="stylesheet">
+    <link href="{{ asset('jquery-ui-1.12.1.custom/jquery-ui.css')}}" rel="stylesheet">
+    <link href="{{ asset('jquery-ui-1.12.1.custom/jquery-ui.structure.css')}}" rel="stylesheet">
+    <link href="{{ asset('jquery-ui-1.12.1.custom/jquery-ui.theme.css')}}" rel="stylesheet">
 
-    <!--Import scripts-->
-    <script src="{{asset('fullcalendar-3.4.0/lib/jquery.min.js')}}"></script>
-    <script src="{{asset('fullcalendar-3.4.0/lib/moment.min.js')}}"></script>
-    <script src="{{asset('fullcalendar-3.4.0/lib/jquery-ui.min.js')}}"></script>
-    <script src="{{asset('lightbox2-master/src/js/lightbox.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-
-    <!--Custom Styles-->
+    <!--Custom styles-->
+    <link href="{{ asset('fullcalendar-3.4.0/fullcalendar-custom.css')}}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     
-    <!--Custom Scripts-->
+    <!--Import scripts-->
+    <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{asset('fullcalendar-3.4.0/lib/moment.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+
+    <!--Custom scripts-->
     <script src="{{asset('js/calendar.js')}}"></script>
 
 </head>
@@ -35,8 +36,9 @@
         @yield('content')
     </div>
 
-    <!-- Scripts -->
+    <!-- Late loading Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{asset('fullcalendar-3.4.0/fullcalendar.js')}}"></script>
+    <script src="{{asset('jquery-ui-1.12.1.custom/jquery-ui.js')}}"></script>
 </body>
 </html>

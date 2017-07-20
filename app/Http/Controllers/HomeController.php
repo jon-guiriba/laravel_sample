@@ -24,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $candidates = Candidate::all();
-        return view('home')->with(compact('candidates'));
+        // $candidates = Candidate::all();
+        // return view('calendar')->with(compact('events'));
+        return view('calendar');
     }
 }
