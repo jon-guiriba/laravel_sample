@@ -1,10 +1,23 @@
 $(document).ready(function() {
 	$('#calendar').fullCalendar({
+		height: 'parent',
+	    navLinks: true,
+		customButtons: {
+	        addEvent: {
+	            text: '+',
+	            click: function() {
+	                alert('clicked the custom button!');
+	            }
+	        },
+    	},
+	    header: {
+	        left: 'prev,next today',
+	        center: 'title',
+	        right: 'addEvent month,agendaWeek,agendaDay'
+    	},
      	eventSources: [
-
-        // your event source
         {
-            events: [ // put the array in the `events` property
+            events: [ 
                 {
                     title  : 'Sign contract with Mark Zuckerberg',
                     start  : '2017-07-19',
@@ -22,14 +35,11 @@ $(document).ready(function() {
                     description : "<a class='calendar-desc' style='color:white;' href='http://localhost/laravel/public/img/influential-2.jpg' data-lightbox='test3'>Elica</a>"
                 }
             ],
-            color: 'light-blue',     // an option!
-            textColor: 'white' // an option!
+            editable: true,
+            color: 'light-blue',     
+            textColor: 'white' 
         }
-
-        // any other event sources...
-
 	    ],
-	    navLinks: true,
 	    eventMouseover: function(calEvent, jsEvent, view) {
             $(this).append(calEvent.description);
 
