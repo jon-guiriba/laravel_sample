@@ -6,43 +6,33 @@ $(document).ready(function() {
         {
             events: [ // put the array in the `events` property
                 {
-                    title  : 'event1',
-                    start  : '2010-01-01'
+                    title  : 'Sign contract with Mark Zuckerberg',
+                    start  : '2017-07-19',
+                    description : "<a class='calendar-desc' style='color:white;' href='http://localhost/laravel/public/img/influential-4.jpg' data-lightbox='test'>Mark</a>"
                 },
                 {
-                    title  : 'event2',
-                    start  : '2010-01-05',
-                    end    : '2010-01-07'
+                    title  : 'Discuss next hit with Alica and John',
+                    start  : '2017-07-20',
+                    end    : '2017-07-22',
+                    description : "<a class='calendar-desc' style='color:white;' href='http://localhost/laravel/public/img/influential-3.jpg' data-lightbox='test2'>Alica</a><a class='calendar-desc' style='color:white;' href='http://localhost/laravel/public/img/influential-1.jpg' data-lightbox='test2'>John</a>"
                 },
                 {
-                    title  : 'event3',
-                    start  : '2010-01-09T12:30:00',
+                    title  : 'Meet with Elica and team',
+                    start  : '2017-07-22',
+                    description : "<a class='calendar-desc' style='color:white;' href='http://localhost/laravel/public/img/influential-2.jpg' data-lightbox='test3'>Elica</a>"
                 }
             ],
-            color: 'black',     // an option!
-            textColor: 'yellow' // an option!
+            color: 'light-blue',     // an option!
+            textColor: 'white' // an option!
         }
 
         // any other event sources...
 
 	    ],
 	    navLinks: true,
-	    navLinkDayClick: function(date, jsEvent) {
-	        console.log('day', date.format()); // date is a moment
-	        console.log('coords', jsEvent.pageX, jsEvent.pageY);
-	    },
-        navLinkWeekClick: function(weekStart, jsEvent) {
-	        console.log('week start', weekStart.format()); // weekStart is a moment
-	        console.log('coords', jsEvent.pageX, jsEvent.pageY);
-    	},
-	    dayClick: function(date, jsEvent, view) {
-	        console.log('Clicked on: ' + date.format());
-	        console.log('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-	        console.log('Current view: ' + view.name);
-        // change the day's background color just for fun
-        	$(this).css('background-color', 'red');
-    	},
-    	eventClick: function(calEvent, jsEvent, view) {
+	    eventMouseover: function(calEvent, jsEvent, view) {
+            $(this).append(calEvent.description);
+
 	        console.log('Event: ' + calEvent.title);
 	        console.log('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
 	        console.log('View: ' + view.name);
@@ -50,6 +40,9 @@ $(document).ready(function() {
 	        // change the border color just for fun
 	        $(this).css('border-color', 'red');
     	},
+        eventMouseout: function(calEvent, jsEvent, view) {
+            $('.calendar-desc').remove();
+        },
 
     });    
 });
